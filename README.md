@@ -111,7 +111,7 @@ fpkm.df = data.frame(“gene_short_name” = annotation.table$gene_short_name, �
 write.table(fpkm.df, file = "~/fpkm", sep = "\t", row.names = F, quote = F)
 ```
 ##Acknowledgements and Contributers
-Katherine Duchinski<sup>1</sup> and [Margaret Antonion](github.com/mmlantonio)<sup>2</sup>
+Katherine Duchinski<sup>1</sup> and [Margaret Antonio](https://github.com/mmlantonio)<sup>2</sup>
 Dr. Paul Anderson<sup>1</sup>
 
 Drs. Dennis Watson<sup>3</sup>, Patricia Watson<sup>3</sup>, and Robert Wilson<sup>3</sup> provided primary transcriptomic data which was used to develop this application.
