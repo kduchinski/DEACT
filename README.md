@@ -109,7 +109,7 @@ for (i in 1:(nrow(diffTable))){
 #Create a table for use in DEACT
 fpkm.df = data.frame(“gene_short_name” = annotation.table$gene_short_name, “gene_id” = annotation.table$gene_id, “fpkmdiff.loss” = fpkmdiff.loss, “fpkmdiff.gain” = fpkmdiff.gain, “foldChange.loss” = foldChange.loss, “foldChange.gain” = foldChange.gain, “qValueLoss” = q.loss, “qValueGain” = q.gain)
 write.table(fpkm.df, file = "~/fpkm", sep = "\t", row.names = F, quote = F)
-
+```
 ##Acknowledgements and Contributers
 Katherine Duchinski<sup>1</sup> and [Margaret Antonion](github.com/mmlantonio)<sup>2</sup>
 Dr. Paul Anderson<sup>1</sup>
@@ -120,6 +120,6 @@ We would like to thank the College of Charleston for hosting the NSF Omics REU w
 
 Page maintained by Katherine Duchinski.
 
-<sup></sup>College of Charleston
-<sup></sup>Boston College
-<sup></sup>Medical University of South Carolina
+<sup>1</sup>College of Charleston
+<sup>2</sup>Boston College
+<sup>3</sup>Medical University of South Carolina
