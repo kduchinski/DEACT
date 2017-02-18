@@ -5,7 +5,7 @@ Analyzing transcriptome changes between healthy and abnormal cells is key in und
 - quickly answer preliminary questions about new RNA-seq data to prompt downstream analyses
 - and retain a flow of discussion in a collaborative setting.
 
-![alt text](http://imgur.com/a/BO5JD)
+![alt text](http://imgur.com/a/BO5JD.png)
 
 ## A: File upload
 -	Maximum file size: 5MB
@@ -39,18 +39,18 @@ Analyzing transcriptome changes between healthy and abnormal cells is key in und
   - When finished, saving settings unlocks all other functionality.
 2. Plot data
 
-  ![alt text](http://imgur.com/xxgxjE5)
+  ![alt text](http://imgur.com/xxgxjE5.png)
 
   -	Plots Condition 1 vs. control on the x-axis and Condition 2 vs. control on the y-axis in the units chosen (Section B)
   -	Click and drag to select genes, or click one of the icons above the plot to zoom, pan, or export a still version of the plot.
   -	Hover over a point to show its coordinates (expression changes) and gene symbol. 
   -	If plotting the full dataset, the hover tag will also show which conditions significantly affected a gene. 
 3. View data
-  ![alt text](http://imgur.com/H4rvKD4)
+  ![alt text](http://imgur.com/H4rvKD4.png)
   - A table will appear here once data have been selected from the regulation table (Section C) or from the scatterplot (Section D2).
   - Users may preview the curated subset prior to downloading. The table offers sorting and searching functionality.
 4. Download data
-  ![alt text](http://imgur.com/tou96kA)
+  ![alt text](http://imgur.com/tou96kA.png)
   - The user-curated subset may be downloaded as a tab-delimited text file. Users must first choose the columns of the dataset to download, as some downstream analytic tools require specific formats. Multiple versions of the file may be downloaded if desired.
 
 ## 8. Input file script from Cufflinks data
