@@ -5,7 +5,9 @@ Analyzing transcriptome changes between healthy and abnormal cells is key in und
 - quickly answer preliminary questions about new RNA-seq data to prompt downstream analyses
 - and retain a flow of discussion in a collaborative setting.
 
-## 1. File upload
+![alt text](http://imgur.com/a/BO5JD)
+
+## A: File upload
 -	Maximum file size: 5MB
 -	Tab-delimited text file (.txt/.csv)
 -	Columns:
@@ -14,34 +16,44 @@ Analyzing transcriptome changes between healthy and abnormal cells is key in und
   *	Change in expression for each condition
   *	Log2 fold change in expression for each condition
   *	Probability values of each condition
--	Code for file creation in Section 8 
-## 2. Column selection
--	Use the drop-down arrows to select the column corresponding to the specified information or click on the box and type in the column name
--	The table in Section 3 will be updated automatically as information is filled in
-## 3. Regulation table
--	This table shows how many genes are significantly affected by each condition
--	The last four rows are divisions of the genes affected by both conditions. In order, these rows represent quadrants I, III, IV, and II of the scatterplot respectively
--	The buttons to the right of these will add all genes in a category to the subset
+-	See Section E for a sample R script for file creation from Cufflinks data.
+- An example dataset is also available. These data represent transcripts from a knockdown and an overexpression of the FLI1 transcription factor.
 
-## 4. Plot units toggle
--	Choose to graph points by fpkm difference or log2 fold change before selecting from the plot. Switching between them will erase the current selection.
--	Gene expression data are commonly graphed by log¬2 fold change. However, if the control value is 0 fpkm, then the fold change constitutes a division by 0. These data points will have a fold change value of positive or negative infinity and cannot be plotted. If log2¬ fold change is selected, then the user can choose whether or not to include points with infinite fold changes.
+## B: Plot options
+- This section is not available until settings have been saved.
+-	The user may choose to graph points by fpkm difference or log2 fold change.
+-	Gene expression data are commonly graphed by log¬2 fold change for the sake of normalization. However, if the control value is 0 fpkm, then the fold change constitutes a division by 0. These data points will have a fold change value of positive or negative infinity and cannot be plotted. If log2¬ fold change is selected, then the user can choose whether or not to include points with infinite fold changes.
+-	By default, only genes significantly affected by both conditions are displayed on the graph. Choose the "Full dataset" option to graph every point.
+- If options are changed after a selection has been made, the current selection will be erased.
 
-## 5. Scatterplot
--	When the parameters have been set through the drop-down menus in Section 2, set the plot toggle to “Make plot”
--	A scatterplot will appear in place of the column selection menus
--	Plots condition 1 vs. control on the x-axis and condition 2 vs. control on the y-axis in the units chosen (Section 3)
--	Regulation information for individual points may be derived from the plot. Points to the right of the y-axis were up-regulated in condition 1 and points above the x-axis 
+## C: Regulation table
+- This section is not available until settings have been saved.
+-	This table shows how many genes are significantly affected by each condition.
+-	The last four rows are divisions of the genes affected by both conditions. In order, these rows represent quadrants I, III, IV, and II of the scatterplot respectively.
+-	The buttons to the right of these will add all genes in a category to the subset.
 
-## 6. Page navigation and “Full Dataset” tab
--	On the first page, only genes significantly affected by both conditions are displayed on the graph. 
--	Click on the “Full Dataset” tab to see the graph of every point. Points from this graph can be added to the subset as well. A table of these points will be shown below the scatterplot on this page. 
--	The button in the sidebar on the “Full Dataset” page will add these points to the table on the first page.
+## D: Activity panel
+1. Manage data
+  - When a dataset is uploaded or the example dataset has been selected, the columns of the dataset will appear in drop-down menus.
+  - First, use the drop-down menus to specify the parameters as labeled. Users may also name the conditions, which default to Condition 1 and Condition 2, respectively. Condition names may be edited at any time by returning to this panel.
+  - When finished, saving settings unlocks all other functionality.
+2. Plot data
 
-## 7. Download button
--	Download the selected data as a tab-delimited text file containing the log2 fold change, probability value, and gene symbol columns.
+  ![alt text](http://imgur.com/xxgxjE5)
 
-## 8. Input file script
+  -	Plots Condition 1 vs. control on the x-axis and Condition 2 vs. control on the y-axis in the units chosen (Section B)
+  -	Click and drag to select genes, or click one of the icons above the plot to zoom, pan, or export a still version of the plot.
+  -	Hover over a point to show its coordinates (expression changes) and gene symbol. 
+  -	If plotting the full dataset, the hover tag will also show which conditions significantly affected a gene. 
+3. View data
+  ![alt text](http://imgur.com/H4rvKD4)
+  - A table will appear here once data have been selected from the regulation table (Section C) or from the scatterplot (Section D2).
+  - Users may preview the curated subset prior to downloading. The table offers sorting and searching functionality.
+4. Download data
+  ![alt text](http://imgur.com/tou96kA)
+  - The user-curated subset may be downloaded as a tab-delimited text file. Users must first choose the columns of the dataset to download, as some downstream analytic tools require specific formats. Multiple versions of the file may be downloaded if desired.
+
+## 8. Input file script from Cufflinks data
 ```R
 cuff <- readCufflinks(dir="/jobs/tmp/Fli1//cuffdiff",rebuild=F)
 mySigGeneIdsLoss<-getSig(cuff,'X5324','shc1',alpha=0.05,level="genes")
@@ -112,6 +124,7 @@ write.table(fpkm.df, file = "~/fpkm", sep = "\t", row.names = F, quote = F)
 ```
 ##Acknowledgements and Contributers
 Katherine Duchinski<sup>1</sup> and [Margaret Antonio](https://github.com/antmarge)<sup>2</sup>
+
 Dr. Paul Anderson<sup>1</sup>
 
 Drs. Dennis Watson<sup>3</sup>, Patricia Watson<sup>3</sup>, and Robert Wilson<sup>3</sup> provided primary transcriptomic data which was used to develop this application.
