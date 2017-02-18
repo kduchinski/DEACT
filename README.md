@@ -5,7 +5,7 @@ Analyzing transcriptome changes between healthy and abnormal cells is key in und
 - quickly answer preliminary questions about new RNA-seq data to prompt downstream analyses
 - and retain a flow of discussion in a collaborative setting.
 
-![alt text](http://imgur.com/a/BO5JD.png)
+![alt text](http://i.imgur.com/RusSLEn.png)
 
 ## A: File upload
 -	Maximum file size: 5MB
